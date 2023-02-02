@@ -228,11 +228,9 @@ def sumThree():
 
 # NOTE TO SELF: Attempted this, however an using int() will round a decimal DOWN by default. For future reference, check to see if the answer is not a decimal before attempting to print as an integer using try except
   
-# try: 
-#    print(int(num1 + num2 + num3))
-# except:
-#    print(num1 + num2 + num3)
-  print(num1 + num2 + num3)
+  valueAsInt = int(num1 + num2 + num3)
+  valueAsDec = num1 + num2 + num3
+  print(valueAsInt if (valueAsDec - valueAsInt) == 0 else valueAsDec)
   
   
 # 14. sumMany()
@@ -324,7 +322,20 @@ def upperMe():
         print("Please only input one letter\n")
 
       else: 
-        print(letter.upper())
+        print(letter.upper())        
+        # A demonstration of bitwise operations to perform very fast toUpper
+        # This is hard to read and should probably never be used unless you
+        # know you need really, really tight optimization for run speed
+
+        # print(chr(ord(list(letter)[0]) & ~(1<<5)))
+        # a     0110 0001
+        # A     0100 0001
+        # 1     0000 0001
+        # 1<<1  0000 0010
+        # 1<<2  0000 0100
+        # 1<<3  0000 1000
+        # 1<<4  0001 0000
+        # 1<<5  0010 0000
         break
         
     else:

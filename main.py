@@ -10,6 +10,8 @@ Create a main program that calls and tests each of the functions
 
 
 functions.hello()
+#functions.sumThree()
+functions.upperMe()
 # helloPlus()
 # decSquare()
 # intProd15()
